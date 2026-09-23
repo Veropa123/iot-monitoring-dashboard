@@ -1,4 +1,4 @@
-import { WebSocketServer } from "ws";
+import { WebSocket, WebSocketServer } from "ws";
 
 export function attachWebSocketHub(server) {
   const wss = new WebSocketServer({ server, path: "/ws" });
@@ -7,7 +7,7 @@ export function attachWebSocketHub(server) {
     const message = JSON.stringify({ event, payload });
 
     for (const client of wss.clients) {
-      if (client.readyState === client.OPEN) {
+      if (client.readyState === WebSocket.OPEN) {
         client.send(message);
       }
     }
