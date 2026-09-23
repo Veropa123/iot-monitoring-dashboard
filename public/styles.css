@@ -1,0 +1,380 @@
+* { box-sizing: border-box; }
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f3f6fa;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(60, 91, 219, 0.11), transparent 35rem),
+    #f3f6fa;
+}
+
+a, button { font: inherit; }
+
+.shell {
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 42px 0 24px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  margin: 8px 0 12px;
+  font-size: clamp(2.1rem, 5vw, 3.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.hero p {
+  max-width: 780px;
+  margin: 0;
+  color: #637087;
+  font-size: 1.03rem;
+  line-height: 1.65;
+}
+
+.eyebrow {
+  color: #5068e7;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.connection-pill,
+.secondary-button {
+  border: 1px solid #d9e1eb;
+  border-radius: 999px;
+  padding: 9px 13px;
+  background: white;
+  color: #445067;
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.connection-pill.live {
+  background: #eaf9f2;
+  border-color: #c8eadb;
+  color: #087a55;
+}
+
+.connection-pill.offline {
+  background: #fff0ee;
+  border-color: #f6d3ce;
+  color: #b42318;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.kpi-card,
+.panel,
+.device-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e0e6ef;
+  box-shadow: 0 16px 48px rgba(42, 52, 82, 0.07);
+}
+
+.kpi-card {
+  border-radius: 17px;
+  padding: 20px;
+}
+
+.kpi-card span {
+  color: #6f798c;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.kpi-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.device-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.device-card {
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.device-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.device-head h3 {
+  margin: 4px 0 0;
+  font-size: 1.05rem;
+}
+
+.device-id {
+  color: #8992a2;
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.state {
+  border-radius: 999px;
+  padding: 5px 8px;
+  background: #edf0f6;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.state.running { background: #eaf9f2; color: #087a55; }
+.state.warning { background: #fff0ee; color: #b42318; }
+.state.idle { background: #fff6e8; color: #a85a05; }
+.state.stopped { background: #edf0f5; color: #4e596d; }
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.metric {
+  padding: 11px;
+  border-radius: 12px;
+  background: #f7f9fc;
+}
+
+.metric span {
+  display: block;
+  color: #7c8698;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 0.8fr;
+  gap: 14px;
+}
+
+.panel {
+  border-radius: 20px;
+  padding: 22px;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.panel-heading h2,
+.architecture-panel h2 {
+  margin: 5px 0 0;
+  font-size: 1.4rem;
+}
+
+.small-label {
+  color: #8790a0;
+  font-size: 0.78rem;
+}
+
+.chart-panel canvas {
+  width: 100%;
+  height: 270px;
+  display: block;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  color: #6a7487;
+  font-size: 0.78rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  max-height: 310px;
+  overflow: auto;
+}
+
+.alert {
+  padding: 12px;
+  border-radius: 12px;
+  background: #f7f9fc;
+  border-left: 3px solid #f0a43a;
+}
+
+.alert.critical {
+  border-left-color: #d92d20;
+  background: #fff5f4;
+}
+
+.alert strong {
+  display: block;
+  font-size: 0.82rem;
+  margin-bottom: 4px;
+}
+
+.alert span {
+  color: #737d8e;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.empty-state {
+  color: #7c8697;
+  font-size: 0.86rem;
+  padding: 24px 0;
+}
+
+.architecture-panel {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.architecture-panel p {
+  max-width: 650px;
+  color: #687386;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.architecture-flow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7px;
+}
+
+.architecture-flow span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #f0f3f9;
+  color: #4c5870;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.architecture-flow b {
+  color: #9aa3b1;
+}
+
+.status {
+  margin: 14px 4px 0;
+  color: #667085;
+  font-size: 0.84rem;
+}
+
+.status.error { color: #b42318; }
+
+footer {
+  padding: 24px 0 2px;
+  color: #8992a3;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 940px) {
+  .hero,
+  .architecture-panel {
+    flex-direction: column;
+  }
+
+  .device-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-flow {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(100% - 20px, 1240px);
+    padding-top: 24px;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 430px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
