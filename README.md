@@ -1,5 +1,11 @@
 # IoT Monitoring Dashboard
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Open_App-4C6EF5?style=for-the-badge)](https://iot-monitoring-dashboard-1a8q.onrender.com/)
+[![API Docs](https://img.shields.io/badge/API_Docs-Swagger-009688?style=for-the-badge)](https://iot-monitoring-dashboard-1a8q.onrender.com/docs)
+[![GitHub](https://img.shields.io/badge/Source_Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/Veropa123/iot-monitoring-dashboard)
+
+> **Live application:** https://iot-monitoring-dashboard-1a8q.onrender.com/
+
 A real-time IoT monitoring platform for device telemetry, machine state, alerts, historical readings, and live operational dashboards.
 
 ## Overview
@@ -51,7 +57,7 @@ The public portfolio deployment runs with a built-in device simulator so recruit
 - Automated tests
 - Docker and Docker Compose
 - GitHub Actions CI
-- Render deployment configuration
+- Public deployment on Render
 
 ## Demo Devices
 
@@ -93,6 +99,22 @@ The simulator exists only to make the portfolio project independently demonstrab
 | GET | `/api/config` | Public demo configuration |
 | GET | `/docs` | Interactive Swagger/OpenAPI documentation |
 | WS | `/ws` | Real-time telemetry and alert events |
+
+## Live Demo
+
+Open the deployed application:
+
+https://iot-monitoring-dashboard-1a8q.onrender.com/
+
+Interactive API documentation:
+
+https://iot-monitoring-dashboard-1a8q.onrender.com/docs
+
+Health check:
+
+https://iot-monitoring-dashboard-1a8q.onrender.com/health
+
+> The free Render instance may take a short time to wake up after periods of inactivity.
 
 ## Project Structure
 
@@ -255,7 +277,7 @@ This project is designed as an IoT software case study, not as a simulated hardw
 
 ## Status
 
-**Functional first version — ready for public deployment.**
+**Live and publicly deployed.**
 
 ## License
 
