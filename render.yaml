@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: iot-monitoring-dashboard
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DEMO_MODE
+        value: "true"
+      - key: SIMULATOR_INTERVAL_MS
+        value: "2000"
