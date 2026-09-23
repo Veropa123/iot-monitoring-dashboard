@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IoT Monitoring Dashboard</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div>
+        <span class="eyebrow">REAL-TIME INDUSTRIAL IOT PORTFOLIO PROJECT</span>
+        <h1>IoT Monitoring Dashboard</h1>
+        <p>
+          Live device telemetry, operational status, alerts and historical data
+          delivered through MQTT-ready ingestion and WebSockets.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <span class="connection-pill" id="connection-pill">Connecting...</span>
+        <a class="secondary-button" href="/api/config" target="_blank" rel="noreferrer">API Config</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="kpi-grid" id="kpi-grid">
+        <article class="kpi-card"><span>Connected devices</span><strong>—</strong></article>
+        <article class="kpi-card"><span>Running</span><strong>—</strong></article>
+        <article class="kpi-card"><span>Active alerts</span><strong>—</strong></article>
+        <article class="kpi-card"><span>Average temp.</span><strong>—</strong></article>
+      </section>
+
+      <section class="device-grid" id="device-grid"></section>
+
+      <section class="content-grid">
+        <article class="panel chart-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">LIVE TELEMETRY</span>
+              <h2>Temperature trend</h2>
+            </div>
+            <span class="small-label">Last 30 readings</span>
+          </div>
+          <canvas id="telemetry-chart" width="900" height="300"></canvas>
+          <div class="legend" id="legend"></div>
+        </article>
+
+        <article class="panel alerts-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">EVENTS</span>
+              <h2>Recent alerts</h2>
+            </div>
+            <span class="small-label" id="alert-count">0 alerts</span>
+          </div>
+          <div id="alerts-list" class="alerts-list"></div>
+        </article>
+      </section>
+
+      <section class="panel architecture-panel">
+        <div>
+          <span class="eyebrow">ARCHITECTURE</span>
+          <h2>From edge device to browser in real time</h2>
+          <p>
+            The public demo uses a built-in device simulator. Set an MQTT broker URL
+            to switch the same ingestion pipeline to physical ESP32 or industrial devices.
+          </p>
+        </div>
+        <div class="architecture-flow">
+          <span>ESP32 / Simulator</span><b>→</b><span>MQTT</span><b>→</b>
+          <span>Node.js</span><b>→</b><span>WebSocket</span><b>→</b><span>Dashboard</span>
+        </div>
+      </section>
+
+      <p id="status" class="status">Initializing telemetry...</p>
+    </main>
+
+    <footer>
+      Portfolio demo · Simulated telemetry is clearly labeled and can be replaced by a real MQTT broker.
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
