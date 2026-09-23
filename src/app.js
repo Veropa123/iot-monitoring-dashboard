@@ -4,8 +4,10 @@ import { fileURLToPath } from "node:url";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
+import swaggerUi from "swagger-ui-express";
 
 import { config } from "./config.js";
+import { openapiSpec } from "./openapi.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -19,6 +21,7 @@ export function createApp(store) {
   );
   app.use(express.json({ limit: "256kb" }));
   app.use(morgan(config.env === "test" ? "tiny" : "combined"));
+  app.use("/docs", swaggerUi.serve, swaggerUi.setup(openapiSpec));
   app.use(express.static(path.join(__dirname, "..", "public")));
 
   app.get("/health", (_req, res) => {
